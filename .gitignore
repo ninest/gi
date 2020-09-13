@@ -137,6 +137,8 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+.vscode
 
 # Only used for testing
 .gitignore-test
+playground.py

@@ -1,13 +1,7 @@
-import json
 from .get_gitignores import get_gitignore
-
+from .consts import languages_list
 
 gitignore_path = ".gitignore-test"
-languages_list = []
-
-
-with open("gitignores.json") as f:
-    languages_list = json.load(f)
 
 
 def gi_add(names, gitignore_path=gitignore_path):
@@ -25,6 +19,9 @@ def gi_add(names, gitignore_path=gitignore_path):
             language_name = languages_list[index]
             gitignore = get_gitignore(language_name)
             gitignore_string += f"# ${name}\n" + gitignore + "\n\n"
+
+        else:
+            print(f"The gitignore template {name} does not exist :/")
 
     # add to .gitignore
     dot_gitignorefile = open(gitignore_path, "a")

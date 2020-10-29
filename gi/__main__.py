@@ -1,4 +1,5 @@
 import sys
+import webbrowser
 
 from .consts import HELP_TEXT
 from .functions import gi_add, gi_clear
@@ -18,10 +19,12 @@ def main():
 def run(command, args):
     if command == "help":
         print(HELP_TEXT)
-    elif command == "add":
+    elif command in ["add", "a"]:
         gi_add(args)
     elif command == "clear":
         gi_clear()
+    elif command in ["source", "github"]:
+        webbrowser.open("https://github.com/ninest/gi/")
 
 
 if __name__ == "__main__":

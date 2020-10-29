@@ -1,5 +1,4 @@
 import requests
-import json
 
 
 def generate_gitignore_list():
@@ -13,8 +12,7 @@ def generate_gitignore_list():
             if ".gitignore" in file["name"]:
                 languages_list.append(file["name"].split(".gitignore")[0])
 
-        with open("gitignores.json", "w") as outfile:
-            json.dump(languages_list, outfile)
+        print(languages_list)
 
     else:
         # TODO: create and throw and Error

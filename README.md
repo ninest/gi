@@ -2,6 +2,10 @@
 
 > Easily create a .gitignore
 
+![PyPI](https://img.shields.io/pypi/v/gi?style=flat-square)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/gi?style=flat-square)
+![GitHub](https://img.shields.io/github/license/ninest/gi?style=flat-square)
+
 ## Usage
 
 ```bash
@@ -35,5 +39,24 @@ poetry install
 Add the pre-commit hooks:
 
 ```bash
+pre-commit install
+```
 
+### Editor settings
+
+```json
+{
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4
+  },
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
+
+  "python.pythonPath": "/Users/username-here/Library/Caches/pypoetry/virtualenvs/xxx-py3.7"
+}
 ```

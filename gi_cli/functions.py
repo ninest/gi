@@ -1,11 +1,15 @@
 import requests
+
 from .constants import LANGUAGES_LIST, ERROR_MESSAGE
 from .config import GITIGNORE_FILE_PATH
 
 
-def gitignore_add(names):
+def get_language_to_add(names):
     """
-    Adds gitignores to gitignore
+    Get a list of case-sensitive languages to add.
+
+    >>> get_language_to_add(["pytHON", "NoDe", "tex"])
+    ["Python", "Node", "TeX"]
 
     Parameters:
         names (list[string]): Names of langauges/frameworks to add
@@ -30,7 +34,24 @@ def gitignore_add(names):
             languages_to_add.append(language_name)
 
         else:
-            print("The gitignore template {name} does not exist")
+            raise Exception(f"The gitignore template {name} does not exist")
+
+    return languages_to_add
+
+
+def gitignore_add(names):
+    """
+    Adds gitignores to gitignore
+
+    Parameters:
+        names (list[string]): Names of langauges/frameworks to add
+    """
+
+    try:
+        languages_to_add = get_language_to_add(names)
+    except Exception as e:
+        print("Error: ", e)
+        return
 
     """
     Generate display_string to display which languages are being added.
@@ -43,7 +64,7 @@ def gitignore_add(names):
     # Add languages to gitignore
     gitignore = ""
 
-    for language in languages_to_add:
+    for language_name in languages_to_add:
         langauge_gitignore = get_gitignore(language_name)
         gitignore += f"# {language_name}\n{langauge_gitignore}\n\n"
 
@@ -67,9 +88,9 @@ def get_gitignore(language_name):
     if request.status_code == 200:
         return request.text
     else:
-        print(ERROR_MESSAGE)
+        print("Error: ", ERROR_MESSAGE)
 
 
 def gitignore_clear():
     open(GITIGNORE_FILE_PATH, "w").close()
-    print(".gitignore cleared")
+    print(f"{GITIGNORE_FILE_PATH} cleared")

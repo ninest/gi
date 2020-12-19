@@ -10,7 +10,7 @@
 
 ```bash
 # Install it
-$ pip install gi
+$ pip install gi-cli
 
 # Add a language framework
 $ gi add python
@@ -22,7 +22,7 @@ $ git add node python
 $ git clear
 
 # Uninstall it
-$ pip uninstall pip
+$ pip uninstall gi-cli
 ```
 
 **Note**: Mac or Linux users may have to use `pip3` instead of `pip`.

@@ -1,7 +1,7 @@
 import sys
 import webbrowser
 
-from .constants import HELP_TEXT
+from .constants import HELP_TEXT, LANGUAGES_LIST
 from .functions import gitignore_add, gitignore_clear
 
 
@@ -17,8 +17,13 @@ def main():
 def run(command, args):
     if command == "help":
         print(HELP_TEXT)
+
     elif command in ["add", "a"]:
         gitignore_add(args)
+
+    elif command in ["list"]:
+        print(", ".join(LANGUAGES_LIST))
+
     elif command in ["clear"]:
         gitignore_clear()
     elif command in ["source", "github"]:

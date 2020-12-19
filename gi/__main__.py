@@ -1,7 +1,8 @@
 import sys
 import webbrowser
 
-# from .config import GITIGNORE_FILE_PATH
+from .constants import HELP_TEXT
+from .functions import gitignore_add
 
 
 def main():
@@ -10,15 +11,14 @@ def main():
         args = sys.argv[2:]
         run(command, args)
     else:
-        print("Help text")
+        print(HELP_TEXT)
 
 
 def run(command, args):
     if command == "help":
-        print("help text")
+        print(HELP_TEXT)
     elif command in ["add", "a"]:
-        print("add")
-        print(args)
+        gitignore_add(args)
     elif command in ["source", "github"]:
         webbrowser.open("https://github.com/ninest/gi/")
 

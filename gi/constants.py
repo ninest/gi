@@ -14,6 +14,12 @@ help:
 
 """
 
+ERROR_MESSAGE = """
+An error occurred and your .gitignore file was not changed. Please check your connection or try again later.
+
+If you think this is bug, please file an issue at https://github.com/ninest/gi/
+"""
+
 LANGUAGES_LIST = [
     "Actionscript",
     "Ada",

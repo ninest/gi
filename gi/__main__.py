@@ -2,7 +2,7 @@ import sys
 import webbrowser
 
 from .constants import HELP_TEXT
-from .functions import gitignore_add
+from .functions import gitignore_add, gitignore_clear
 
 
 def main():
@@ -19,6 +19,8 @@ def run(command, args):
         print(HELP_TEXT)
     elif command in ["add", "a"]:
         gitignore_add(args)
+    elif command in ["clear"]:
+        gitignore_clear()
     elif command in ["source", "github"]:
         webbrowser.open("https://github.com/ninest/gi/")
 

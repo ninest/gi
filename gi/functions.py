@@ -68,3 +68,8 @@ def get_gitignore(language_name):
         return request.text
     else:
         print(ERROR_MESSAGE)
+
+
+def gitignore_clear():
+    open(GITIGNORE_FILE_PATH, "w").close()
+    print(".gitignore cleared")

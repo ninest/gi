@@ -11,7 +11,7 @@ def gitignore_add(names):
         names (list[string]): Names of langauges/frameworks to add
     """
 
-    gitignore = ""
+    languages_to_add = []
 
     for name in names:
         """
@@ -27,11 +27,25 @@ def gitignore_add(names):
 
             # Get language name with correct case
             language_name = LANGUAGES_LIST[index]
-            langauge_gitignore = get_gitignore(language_name)
-            gitignore += f"# {language_name}\n{langauge_gitignore}\n\n"
+            languages_to_add.append(language_name)
 
         else:
             print("The gitignore template {name} does not exist")
+
+    """
+    Generate display_string to display which languages are being added.
+    TODO: replace last command with (", and")
+    """
+
+    display_string = ", ".join(languages_to_add)
+    print(f"Adding {display_string} to {GITIGNORE_FILE_PATH}")
+
+    # Add languages to gitignore
+    gitignore = ""
+
+    for language in languages_to_add:
+        langauge_gitignore = get_gitignore(language_name)
+        gitignore += f"# {language_name}\n{langauge_gitignore}\n\n"
 
     gitignore_file = open(GITIGNORE_FILE_PATH, "a")
     gitignore_file.write(gitignore)

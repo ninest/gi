@@ -2,8 +2,8 @@
 
 > Easily create a .gitignore
 
-![PyPI](https://img.shields.io/pypi/v/gi?style=flat-square)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/gi?style=flat-square)
+![PyPI](https://img.shields.io/pypi/v/gi-cli?style=flat-square)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/gi-cli?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/ninest/gi?style=flat-square)
 
 ## Usage
@@ -60,3 +60,7 @@ pre-commit install
   "python.pythonPath": "/Users/username-here/Library/Caches/pypoetry/virtualenvs/xxx-py3.7"
 }
 ```
+
+## License
+
+MIT

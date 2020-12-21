@@ -34,7 +34,8 @@ def get_language_to_add(names):
             languages_to_add.append(language_name)
 
         else:
-            raise Exception(f"The gitignore template {name} does not exist")
+            # raise Exception(f"The gitignore template {name} does not exist")
+            print(f"The gitignore template {name} does not exist")
 
     return languages_to_add
 
@@ -47,11 +48,7 @@ def gitignore_add(names):
         names (list[string]): Names of langauges/frameworks to add
     """
 
-    try:
-        languages_to_add = get_language_to_add(names)
-    except Exception as e:
-        print("Error: ", e)
-        return
+    languages_to_add = get_language_to_add(names)
 
     """
     Generate display_string to display which languages are being added.

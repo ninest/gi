@@ -1,4 +1,4 @@
-# gi
+# gi 🥋
 
 > Easily create a .gitignore
 
@@ -16,10 +16,10 @@ $ pip install gi-cli
 $ gi add python
 
 # Or add multiple
-$ git add node python
+$ gi add node python
 
 # Clear your gitignore
-$ git clear
+$ gi clear
 
 # Uninstall it
 $ pip uninstall gi-cli
